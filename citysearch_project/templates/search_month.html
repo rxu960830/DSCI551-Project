@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title> Result</title>
+    <style>  
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+        }
+        th {
+            text-align: left;
+        }
+        caption {
+        font-size: 160%;
+        font-weight: bold;
+        }   
+    </style>
+<body>
+    <center>
+        <table>
+            <caption>Monthly Flight Summary</caption>
+            <tr>
+                <th>Month</th>
+                <th>Number of Flights</th>
+            </tr>
+            {% for result in object_list %}
+            <tr>
+                <td><a href="/search_results/?q={{result.month}}">{{result.month}}</a></td>
+                <td>{{result.total_flights}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+
+</head>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title> Result</title>
+    <style>  
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+        }
+        th {
+            text-align: left;
+        }
+        caption {
+        font-size: 160%;
+        font-weight: bold;
+        }   
+    </style>
+<body>
+    <center>
+        <table>
+            <caption>Flight Information</caption>
+            <tr>
+                <th>Flight Number</th>
+                <th>Share Code</th>
+                <th>Month</th>
+                <th>Date</th>
+                <th>Origin</th>
+                <th>Destination</th>
+            </tr>
+            {% for result in object_list %}
+            <tr>
+                <td>{{result.flight_number}}</td>
+                <td>{{result.share_code}}</td>
+                <td><a href="/search_month/?q={{result.month}}">{{result.month}}</a></td>
+                <td>{{result.date}}</td>
+                <td><a href="/search_airport/?q={{result.origin}}">{{result.origin}}</a></td>
+                <td><a href="/search_airport/?q={{result.destination}}">{{result.destination}}</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+
+</head>
+</html>

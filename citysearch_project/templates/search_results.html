@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<head>
+    <title> Result</title>
+    <style>  
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+    }
+    th {
+        text-align: left;
+    }
+    caption {
+    font-size: 160%;
+    font-weight: bold;
+    }   
+    </style>
+<body>
+    <center>
+        <table>
+            <caption>Route Summary</caption>
+            <tr>
+                <th>Month</th>
+                <th>Number of Flights</th>
+                <th>Origin</th>
+                <th>Destination</th>
+            </tr>
+            {% for result in object_list %}
+            <tr>
+                <td><a href="/search_month/?q={{result.month}}">{{result.month}}</a></td>
+                <td>{{result.count}}</td>
+                <td><a href="/search_airport/?q={{result.origin_city}}">{{result.origin_city}}</a></td>
+                <td><a href="/search_airport/?q={{result.destination_city}}">{{result.destination_city}}</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+
+</head>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title> Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+    <body class="w3-light-grey">
+<div class="w3-content" style="max-width:1400px">
+
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2019%2F04%2Fairplane-in-flight-CHEAPFLIGHTS0419.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle ">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>COVID19</b></span> <span class="w3-hide-small w3-text-light-grey">Airflights</span></h1>
+    <center>
+      <form action="{% url 'search_results' %}" method="get">
+        <input name="q" type="text" placeholder="Search A City...">
+        <button type="submit">Search</button>
+      </form>
+    </center>
+  </div>
+</header>
+
+
+</head>
+</html>
