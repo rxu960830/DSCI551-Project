@@ -25,7 +25,7 @@ SECRET_KEY = '&21rh90=)%ridsb9m#v32ft#i@sldw-(dzdu90a#2=yquks8$@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['184.72.28.133']
+ALLOWED_HOSTS = ['184.72.28.133','0.0.0.0']
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'citysearch_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'flights',
+        'NAME': 'flight',
         'USER': 'postgres',
-        'PASSWORD': '20190104',
-        'HOST': 'database-1.caiiilmdcrzi.us-west-1.rds.amazonaws.com',
+        'PASSWORD': 'A20190104',
+        'HOST': 'database-1.cz0zonv0unei.ap-northeast-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
