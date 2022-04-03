@@ -22,10 +22,10 @@ class Flight(models.Model):
 
 
 class Flightlist(models.Model):
-    flight = models.CharField(db_column='Flight', max_length=6, blank=True, null=True)  # Field name made lowercase.
-    from_airport = models.CharField(db_column='From_Airport', max_length=4, blank=True, null=True)  # Field name made lowercase.
-    to_airport = models.CharField(db_column='To_Airport', max_length=4, blank=True, null=True)  # Field name made lowercase.
-    date = models.DateField(db_column='Date', blank=True, null=True)  # Field name made lowercase.
+    flight = models.CharField( max_length=6, blank=True, null=True)  # Field name made lowercase.
+    from_airport = models.CharField( max_length=4, blank=True, null=True)  # Field name made lowercase.
+    to_airport = models.CharField(max_length=4, blank=True, null=True)  # Field name made lowercase.
+    date = models.DateField( blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -35,8 +35,8 @@ class Flightlist(models.Model):
 class Flightroute(models.Model):
     month = models.TextField(blank=True, null=True)
     count = models.BigIntegerField()
-    origin_city = models.TextField(db_column='Origin_City', blank=True, null=True)  # Field name made lowercase.
-    destination_city = models.TextField(db_column='Destination_City', blank=True, null=True)  # Field name made lowercase.
+    origin_city = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    destination_city = models.TextField( blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -45,17 +45,17 @@ class Flightroute(models.Model):
 
 class Monthlyflight(models.Model):
     month = models.TextField(blank=True, null=True)
-    total_flights = models.BigIntegerField(db_column='total_flights', blank=True, null=True)  # Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    total_flights = models.BigIntegerField( blank=True, null=True)  # Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
 
     class Meta:
         managed = False
         db_table = 'monthlyflight'
 
 class Airport(models.Model):
-    name = models.TextField(db_column='Name', blank=True, null=True)  # Field name made lowercase.
-    city = models.TextField(db_column='City', blank=True, null=True)  # Field name made lowercase.
-    country = models.TextField(db_column='Country', blank=True, null=True)  # Field name made lowercase.
-    icao = models.TextField(db_column='ICAO', blank=True, null=True)  # Field name made lowercase.
+    name = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    city = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    country = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    icao = models.TextField( blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
