@@ -47,4 +47,4 @@ To run the Django server:
 
 Part C)
 Data Visulization and Analysis using QuickSight.
-
+https://ap-northeast-1.quicksight.aws.amazon.com/sn/start/analyses
