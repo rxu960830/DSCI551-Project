@@ -15,7 +15,7 @@ The raw data include:
 1. OpenSky Network Flights data. https://zenodo.org/record/6411336#.YkrpZS-l1-U
 2. ICAO airports master data. https://davidmegginson.github.io/ourairports-data/airports.csv
 
-Total 7,301,152 records after cleaning.
+Total 7,301,152 flight records / 71850 airport records after cleaning.
 
 OpenSky Network Flights dat: Origin and destination airports are computed online based on the ADS-B trajectories on approach/takeoff: no crosschecking with external sources of data has been conducted.
 Fields origin or destination are empty when no airport could be found.
