@@ -17,7 +17,7 @@ class SearchResultsView(ListView):
     def get_queryset(self): 
         query = self.request.GET.get('q')
         object_list = Flightroute.objects.filter(
-            Q(month__icontains=query) | Q(origin_city__icontains=query) | Q(destination_city__icontains=query)
+            Q(month__icontains=query) | Q(origin_city__icontains=query)
         )
         return object_list
 
@@ -39,7 +39,7 @@ class SearchFlightResultsView(ListView):
     def get_queryset(self): 
         query = self.request.GET.get('q')
         object_list = Flight.objects.filter(
-            Q(origin__icontains=query) | Q(destination__icontains=query)
+            Q(origin__icontains=query)
         )
         return object_list
 

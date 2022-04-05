@@ -9,6 +9,7 @@ from django.db import models
 
 
 class Flight(models.Model):
+    id = models.TextField(primary_key=True)
     flight_number = models.TextField(blank=True, null=True)
     share_code = models.TextField(blank=True, null=True)
     origin = models.TextField(blank=True, null=True)
@@ -22,6 +23,7 @@ class Flight(models.Model):
 
 
 class Flightlist(models.Model):
+    id = models.TextField(primary_key=True)
     flight = models.CharField( max_length=6, blank=True, null=True)  # Field name made lowercase.
     from_airport = models.CharField( max_length=4, blank=True, null=True)  # Field name made lowercase.
     to_airport = models.CharField(max_length=4, blank=True, null=True)  # Field name made lowercase.
@@ -33,6 +35,7 @@ class Flightlist(models.Model):
 
 
 class Flightroute(models.Model):
+    id = models.TextField(primary_key=True)
     month = models.TextField(blank=True, null=True)
     count = models.BigIntegerField()
     origin_city = models.TextField( blank=True, null=True)  # Field name made lowercase.
@@ -52,6 +55,7 @@ class Monthlyflight(models.Model):
         db_table = 'monthlyflight'
 
 class Airport(models.Model):
+    id = models.TextField(primary_key=True)
     name = models.TextField( blank=True, null=True)  # Field name made lowercase.
     city = models.TextField( blank=True, null=True)  # Field name made lowercase.
     country = models.TextField( blank=True, null=True)  # Field name made lowercase.
