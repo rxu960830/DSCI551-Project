@@ -3,9 +3,9 @@ This is the github page for AWS data project by Ruojia
 
 This project include 3 parts:
 
-A) A PySpark data tranformation jupyter notebook running on spark-notebook Docker hosted on aws EC2
-B) A Django server to manage and view transformed "Flights" datasets, hosted on EC2 (IaaS) + aws RDS with PostgreSQL DB (PaaS)
-C) A Dashboard using aws QuickSights (SaaS) to visulize and analyze transformed "Flights" data
+A) A PySpark data tranformation jupyter notebook running on spark-notebook Docker hosted on aws EC2;
+B) A Django server to manage and view transformed "Flights" datasets, hosted on EC2 (IaaS) + aws RDS with PostgreSQL DB (PaaS);
+C) A Dashboard using aws QuickSights (SaaS) to visulize and analyze transformed "Flights" data.
 
 
 
