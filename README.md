@@ -10,11 +10,11 @@ C) A Dashboard using aws QuickSights (SaaS) to visulize and analyze transformed 
 
 
 Part A)
-Data Transformation using PySpark
+Data Transformation using PySpark.
 
 
 Part B)
-Data Management and Access using Django
+Data Management and Access using Django.
 To run the Django server:
 1. clone the respository: 
   git clone https://github.com/rxu960830/DSCI551-Project.git
@@ -24,4 +24,4 @@ To run the Django server:
   python3 manage.py runserver 0.0.0.0:8000
 
 Part C)
-Data Visulization and Analysis using QuickSight
+Data Visulization and Analysis using QuickSight.
