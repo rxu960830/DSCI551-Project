@@ -24,11 +24,20 @@
             <tr>
                 <th>Month</th>
                 <th>Number of Flights</th>
+                <th>Year</th>
+                <th>Airline</th>
+                <th>Type</th>
+                <th>origin_country</th>
             </tr>
             {% for result in object_list %}
             <tr>
                 <td><a href="/search_results/?q={{result.month}}">{{result.month}}</a></td>
                 <td>{{result.count}}</td>
+                <td>{{result.year}}</td>
+                <td>{{result.airline}}</td>
+                <td>{{result.type}}</td>
+                <td>{{result.count}}</td>
+
             </tr>
             {% endfor %}
         </table>

@@ -23,16 +23,24 @@
             <caption>Route Summary</caption>
             <tr>
                 <th>Month</th>
+                <th>Year</th>
                 <th>Number of Flights</th>
+                <th>Airline</th>
                 <th>Origin</th>
                 <th>Destination</th>
+                <th>Date</th>
+                <th>Count</th>
             </tr>
             {% for result in object_list %}
             <tr>
                 <td><a href="/search_month/?q={{result.month}}">{{result.month}}</a></td>
+                <td>{{result.year}}</td>
                 <td>{{result.count}}</td>
+                <td>{{result.airline}}</td>
                 <td><a href="/search_airport/?q={{result.origin_city}}">{{result.origin_city}}</a></td>
                 <td><a href="/search_airport/?q={{result.destination_city}}">{{result.destination_city}}</a></td>
+                <td>{{result.date}}</td>
+                <td>{{result.count}}</td>
             </tr>
             {% endfor %}
         </table>

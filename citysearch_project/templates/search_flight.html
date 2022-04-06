@@ -23,20 +23,32 @@
             <caption>Flight Information</caption>
             <tr>
                 <th>Flight Number</th>
-                <th>Share Code</th>
+                <th>Calsign</th>
                 <th>Month</th>
-                <th>Date</th>
+                <th>Year</th>  
+                <th>Date</th>           
                 <th>Origin</th>
                 <th>Destination</th>
+                <th>Typecode</th>
+                <th>Airline</th>
+                <th>Duration</th>
+                <th>Origin City</th>
+                <th>Destination City</th>
             </tr>
             {% for result in object_list %}
             <tr>
-                <td>{{result.flight_number}}</td>
-                <td>{{result.share_code}}</td>
+                <td>{{result.number}}</td>
+                <td>{{result.callsign}}</td>
                 <td><a href="/search_month/?q={{result.month}}">{{result.month}}</a></td>
+                <td>{{result.year}}</td>
                 <td>{{result.date}}</td>
                 <td><a href="/search_airport/?q={{result.origin}}">{{result.origin}}</a></td>
                 <td><a href="/search_airport/?q={{result.destination}}">{{result.destination}}</a></td>
+                <td>{{result.typecode}}</td>
+                <td>{{result.airline}}</td>
+                <td>{{result.duration}}</td>
+                <td><a href="/search_airport/?q={{result.origin}}">{{result.origin_city}}</a></td>
+                <td><a href="/search_airport/?q={{result.destination}}">{{result.destination_city}}</a></td>
             </tr>
             {% endfor %}
         </table>

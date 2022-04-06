@@ -1,0 +1,1 @@
+docker run -it --name flights -p 8888:8888 -p 4040:4040 -p 4041:4041 --user "$(id -u)" --group-add users -v "${PWD}"/data:/home/jovyan/work jupyter/pyspark-notebook

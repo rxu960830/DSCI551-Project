@@ -26,6 +26,15 @@
                 <th>City</th>
                 <th>Country</th>
                 <th>ICAO Code</th>
+                <th>Type</th>
+                <th>Latitude_deg</th>
+                <th>Longitude_deg</th>
+                <th>elevation_ft</th>
+                <th>Continent</th>
+                <th>keywaords</th>
+                <th>iata</th>
+                <th>region</th>
+
             </tr>
             {% for result in object_list %}
             <tr>
@@ -33,6 +42,15 @@
                 <td><a href="/search_results/?q={{result.city}}">{{result.city}}</a></td>
                 <td>{{result.country}}</td>
                 <td><a href="/search_flight/?q={{result.icao}}">{{result.icao}}</a></td>
+                <td>{{result.name}}</td>
+                <td><a href="/search_results/?q={{result.city}}">{{result.type}}</a></td>
+                <td>{{result.latitude_deg}}</td>
+                <td>{{result.longitude_deg}}</td>
+                <td>{{result.elevation_ft}}</td>
+                <td>{{result.continent}}</td>
+                <td>{{result.keywords}}</td>
+                <td>{{result.region}}</td>
+
             </tr>
             {% endfor %}
         </table>
