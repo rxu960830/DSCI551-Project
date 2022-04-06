@@ -28,7 +28,7 @@
             {% for result in object_list %}
             <tr>
                 <td><a href="/search_results/?q={{result.month}}">{{result.month}}</a></td>
-                <td>{{result.total_flights}}</td>
+                <td>{{result.count}}</td>
             </tr>
             {% endfor %}
         </table>

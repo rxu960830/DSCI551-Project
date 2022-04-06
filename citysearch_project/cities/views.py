@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.views.generic import TemplateView, ListView
 
-from .models import Flightroute, Flight, Monthlyflight, Airport
+from .models import Flightroute, Flight, Monthlyflight, Airport, Flightplane, Flightlist
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
@@ -17,6 +17,17 @@ class SearchResultsView(ListView):
     def get_queryset(self): 
         query = self.request.GET.get('q')
         object_list = Flightroute.objects.filter(
+            Q(month__icontains=query) | Q(origin_city__icontains=query)
+        )
+        return object_list
+
+class SearchPlaneResultsView(ListView):
+    model = Flightplane
+    template_name = 'search_plane.html'
+    
+    def get_queryset(self): 
+        query = self.request.GET.get('q')
+        object_list = Flightplane.objects.filter(
             Q(month__icontains=query) | Q(origin_city__icontains=query)
         )
         return object_list
