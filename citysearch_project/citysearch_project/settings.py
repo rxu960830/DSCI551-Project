@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'citysearch_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'flight',
+        'NAME': 'flights',
         'USER': 'postgres',
         'PASSWORD': 'A20190104',
         'HOST': 'database-1.cz0zonv0unei.ap-northeast-1.rds.amazonaws.com',

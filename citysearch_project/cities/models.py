@@ -10,24 +10,44 @@ from django.db import models
 
 class Flight(models.Model):
     id = models.TextField(primary_key=True)
-    flight_number = models.TextField(blank=True, null=True)
-    share_code = models.TextField(blank=True, null=True)
+    callsign = models.TextField(blank=True, null=True)
+    number = models.TextField(blank=True, null=True)
+    typecode = models.TextField(blank=True, null=True)
     origin = models.TextField(blank=True, null=True)
     destination = models.TextField(blank=True, null=True)
-    date = models.TextField(blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
     month = models.TextField(blank=True, null=True)
+    year = models.TextField(blank=True, null=True)
+    airline = models.TextField( blank=True, null=True)
+    duration = models.BigIntegerField( blank=True, null=True)
+    origin_city = models.TextField(blank=True, null=True)
+    destination_city = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'flight'
 
+class Flightplane(models.Model):
+    id = models.TextField(primary_key=True)
+    typecode = models.TextField(blank=True, null=True)
+    date = models.DateField( blank=True, null=True)  # Field name made lowercase.
+    month = models.BigIntegerField( blank=True, null=True)
+    year = models.BigIntegerField( blank=True, null=True)
+    airline = models.TextField( blank=True, null=True)
+    count = models.BigIntegerField( blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'flightplane'
 
 class Flightlist(models.Model):
     id = models.TextField(primary_key=True)
-    flight = models.CharField( max_length=6, blank=True, null=True)  # Field name made lowercase.
-    from_airport = models.CharField( max_length=4, blank=True, null=True)  # Field name made lowercase.
-    to_airport = models.CharField(max_length=4, blank=True, null=True)  # Field name made lowercase.
+    number = models.TextField(blank=True, null=True)
     date = models.DateField( blank=True, null=True)  # Field name made lowercase.
+    month = models.BigIntegerField( blank=True, null=True)
+    year = models.BigIntegerField( blank=True, null=True)
+    airline = models.TextField( blank=True, null=True)
+    count = models.BigIntegerField( blank=True, null=True)
 
     class Meta:
         managed = False
@@ -36,10 +56,13 @@ class Flightlist(models.Model):
 
 class Flightroute(models.Model):
     id = models.TextField(primary_key=True)
+    date = models.DateField( blank=True, null=True)  # Field name made lowercase.
     month = models.TextField(blank=True, null=True)
+    year = models.BigIntegerField( blank=True, null=True)
     count = models.BigIntegerField()
     origin_city = models.TextField( blank=True, null=True)  # Field name made lowercase.
     destination_city = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    airline = models.TextField( blank=True, null=True)
 
     class Meta:
         managed = False
@@ -47,8 +70,13 @@ class Flightroute(models.Model):
 
 
 class Monthlyflight(models.Model):
-    month = models.TextField(blank=True, null=True)
-    total_flights = models.BigIntegerField( blank=True, null=True)  # Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    month = models.BigIntegerField(blank=True, null=True)
+    year = models.BigIntegerField(blank=True, null=True)
+    count = models.BigIntegerField( blank=True, null=True)  # Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    type = models.TextField(blank=True, null=True)
+    origin_country = models.TextField(blank=True, null=True)
+    origin_region = models.TextField(blank=True, null=True)
+    airline = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -60,6 +88,14 @@ class Airport(models.Model):
     city = models.TextField( blank=True, null=True)  # Field name made lowercase.
     country = models.TextField( blank=True, null=True)  # Field name made lowercase.
     icao = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    iata = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    keywords = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    region = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    continent = models.TextField( blank=True, null=True)  # Field name made lowercase.
+    elevation_ft = models.DecimalField( blank=True, null=True, decimal_places=2, max_digits=10)  # Field name made lowercase.
+    latitude_deg = models.DecimalField( blank=True, null=True, decimal_places=2, max_digits=10)  # Field name made lowercase.
+    longitude_deg_ft = models.DecimalField( blank=True, null=True, decimal_places=2, max_digits=10)  # Field name made lowercase.
+    type = models.TextField( blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
