@@ -20,19 +20,23 @@
 <body>
     <center>
         <table>
-            <caption>Route Summary</caption>
+            <caption>Plane Summary</caption>
             <tr>
+                <th>Year</th>
                 <th>Month</th>
+                <th>Airline</th>
                 <th>Number of Flights</th>
-                <th>Origin</th>
-                <th>Destination</th>
+                <th>Date</th>
+                <th>Plane Type</th>
             </tr>
             {% for result in object_list %}
             <tr>
+                <td>{{result.year}}</td>
                 <td><a href="/search_month/?q={{result.month}}">{{result.month}}</a></td>
+                <td>{{result.Airline}}</td>
                 <td>{{result.count}}</td>
-                <td><a href="/search_airport/?q={{result.origin_city}}">{{result.origin_city}}</a></td>
-                <td><a href="/search_airport/?q={{result.destination_city}}">{{result.destination_city}}</a></td>
+                <td>{{result.Date}}</a></td>
+                <td>{{result.typecode}}</a></td>
             </tr>
             {% endfor %}
         </table>
